@@ -1,8 +1,3 @@
-/**
- * 
- */
-package com.uvg.main;
-
 import java.util.ArrayList;
 /**
  * @author moises.alonso
