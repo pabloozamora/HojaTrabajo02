@@ -9,17 +9,23 @@ public class Principal {
 		Calculadora calculadora = new Calculadora();
 		String datos;
 		
-		File archivo = new File("C:\\Users\\Pablo Zamora\\Documents\\2022\\Semestre 1 2022\\Algoritmos\\Eclipse\\Hoja de Trabajo 2\\src\\src\\com\\uvg\\main\\datos.txt");
+		File archivo = new File("datos.txt");
 		if (!archivo.exists()) {
 			System.out.println("\nVerifique que el archivo de texto se encuentre dentro de la carpeta con todas las clases");
 		}
 		else {
-			System.out.println("nice");
 			try {
 				Scanner teclado = new Scanner(archivo);
 				while (teclado.hasNextLine()) {
 					datos = teclado.nextLine();
+					int resultado = calculadora.Evaluate(datos);
+					if (resultado == 9999999) {
+						System.out.println("Operacion no valida");
 					}
+					else {
+						System.out.println("Resultado: " + resultado);
+					}
+				}
 			}
 			catch (FileNotFoundException e) {
 				System.out.println("\nVerifique que el archivo de texto se encuentre dentro de la carpeta con todas las clases");
@@ -29,4 +35,3 @@ public class Principal {
 		
 	}
 }
-

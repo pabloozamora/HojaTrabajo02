@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 /**
- * @author moises.alonso
+ * @author Pablo Zamora
  *
  */
 public class StackArrayList<T> implements IStack<T> {
