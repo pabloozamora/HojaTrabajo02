@@ -33,12 +33,17 @@ public class Principal {
                 System.out.println("\nBienvenido al evaluador de expresiones postfix. El resultado de cada expresion ingresada, linea por linea es:\n");
 				while (teclado.hasNextLine()) { //Mientras haya una linea mas en el archivo
 					datos = teclado.nextLine();
-					int resultado = calculadora.Evaluate(datos);
-					if (resultado == 9999999) { //Si hay menos operandos de los requeridos dentro de una expresion
-						System.out.println("Operacion no valida");
+					try{ //Se intenta evaluar la expresion
+						int resultado = calculadora.Evaluate(datos);
+						if (resultado == 9999999) { //Si hay menos operandos de los requeridos dentro de una expresion
+							System.out.println("Operacion no valida");
+						}
+						else {
+							System.out.println("Resultado: " + resultado);
+						}
 					}
-					else {
-						System.out.println("Resultado: " + resultado);
+					catch (Exception exception){ //En caso de que haya un caracter invalido u operandos insuficientes, se atrapa la excepcion
+						System.out.println("Operacion no valida");
 					}
 				}
 			}
