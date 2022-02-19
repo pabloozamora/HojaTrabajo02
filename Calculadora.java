@@ -6,6 +6,10 @@ public class Calculadora implements IPosfixCalc{
 	 * @return Resultado
 	 */
 	public int Evaluate(String datos) {
+        /*Pre: datos es una cadena. Cada caracter debe estar separado por un espacio. Los enteros deben ser de un solo numero y las operaciones
+        *son unicamente de suma, resta, multiplicacion y division.
+        *Post: Se devuelve el resultado de la expresion postfix. En caso de que el formato sea invalido, se devuelve "9999999" o salta una excepcion.
+        */
 		int resultado = 0; //variable donde se guardara el resultado de cada operacion
 		int operando_1 = 0; //variable donde se guarda el primer valor a obtener del stack
 		int operando_2 = 0; //variable donde se guarda el segundo valor a obtener del stack
